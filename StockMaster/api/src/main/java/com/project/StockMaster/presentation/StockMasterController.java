@@ -22,16 +22,17 @@ public class StockMasterController {
 	
 	private final GestionUtilisateur GU;
 	
-	/*@PostMapping("/inscrire")
-	public ResponseEntity<?> sInscrire(@RequestBody Utilisateur u) {
-		return (GU.ajouterUtilisateur(u)) ? ResponseEntity.ok("Created") : ResponseEntity.status(HttpStatus.CONFLICT).body("Not Created");
-	}*/
-	
 	@PostMapping("/authentifier")
 	public @ResponseBody ResponseEntity<?> sAuthentifier(@RequestBody Map<String, String> iu) {
 		String email = iu.get("email");
 	    String motpasse = iu.get("motpasse");
 	    Utilisateur u = GU.authentifierUtilisateur(email, motpasse);
+	    return (u != null) ? ResponseEntity.ok().body(u) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
+	}
+	
+	@PostMapping("/inscrire")
+	public @ResponseBody ResponseEntity<?> sInscrire(@RequestBody Utilisateur u) {
+		GU.ajouterUtilisateur(u);
 	    return (u != null) ? ResponseEntity.ok().body(u) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 	}
 }
