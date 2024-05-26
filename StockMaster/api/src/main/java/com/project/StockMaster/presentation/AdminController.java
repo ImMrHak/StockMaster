@@ -545,7 +545,6 @@ public class AdminController {
 	    	GCA.ajouterCommandeArticle(new CommandeArticle(null, ca.getQuantite(), c, ca.getArticle()));
 	    }
 	    return ResponseEntity.ok().body(true);
-	
 	}
 
 	@PostMapping("/admin/modifierStatusCommande/{idCommande}")

@@ -32,6 +32,17 @@ public class StockMasterController {
 	
 	@PostMapping("/inscrire")
 	public @ResponseBody ResponseEntity<?> sInscrire(@RequestBody Utilisateur u) {
+
+		for(Utilisateur eu : GU.afficherUtilisateurs()) {
+			if(eu.getEmail().equals(u.getEmail())) {
+				return ResponseEntity.status(HttpStatus.CONFLICT).body("Email already used");
+			}
+		}
+		
+		if(u.getEmail().isEmpty()) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("");
+		}
+		
 		GU.ajouterUtilisateur(u);
 	    return (u != null) ? ResponseEntity.ok().body(u) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 	}

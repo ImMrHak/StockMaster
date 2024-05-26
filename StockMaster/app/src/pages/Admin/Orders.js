@@ -334,6 +334,7 @@ const Orders = () => {
                                 <FormControl fullWidth margin="normal">
                                     <InputLabel>Utilisateur</InputLabel>
                                     <Select
+                                        required
                                         value={newOrder.utilisateur.idUtilisateur || ''}
                                         onChange={(e) => {
                                             const selectedUser = users.find(user => user.idUtilisateur === e.target.value);
@@ -375,6 +376,7 @@ const Orders = () => {
                                                 label="Quantité"
                                                 type="number"
                                                 fullWidth
+                                                required
                                                 InputProps={{ inputProps: { min: 1, max: article.article.quantite } }}
                                                 value={article.quantite}
                                                 onChange={(e) => {
@@ -410,6 +412,7 @@ const Orders = () => {
                                 <FormControl fullWidth margin="normal">
                                     <InputLabel>Utilisateur</InputLabel>
                                     <Select
+                                        required
                                         value={editedOrder.utilisateur ? editedOrder.utilisateur.idUtilisateur : ''} // Check if utilisateur is not null or undefined
                                         onChange={(e) => {
                                             const selectedUser = users.find(user => user.idUtilisateur === e.target.value);
@@ -431,6 +434,7 @@ const Orders = () => {
                                             <FormControl fullWidth margin="normal">
                                                 <InputLabel>Article</InputLabel>
                                                 <Select
+                                                    required
                                                     value={article.article.idArticle} // Use article.article.idArticle as the value
                                                     onChange={(e) => {
                                                         const selectedArticle = articles.find(art => art.idArticle === e.target.value);
@@ -454,6 +458,7 @@ const Orders = () => {
                                                 label="Quantité"
                                                 type="number"
                                                 fullWidth
+                                                required
                                                 value={article.quantite}
                                                 InputProps={{ inputProps: { min: 1, max: article.article.quantite } }}
                                                 onChange={(e) => {

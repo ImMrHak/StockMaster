@@ -89,7 +89,13 @@ function Login() {
                 setSnackbarMessage('Authentification réussie !');
                 setOpenSuccessSnackbar(true);
                 setTimeout(() => {
-                    window.location.href = 'http://localhost:3000/StockMaster/Dashboard';
+                    if(userData.role.libelle == "ADMIN"){
+                        window.location.href = 'http://localhost:3000/StockMaster/admin/Dashboard';
+                    }
+                    else{
+                        window.location.href = 'http://localhost:3000/StockMaster/user/Dashboard';
+                    }
+                    
                 }, 1000);
             } else {
                 console.log('Erreur');
@@ -210,6 +216,12 @@ function Login() {
                                 <Grid item xs>
                                     <Link href="/StockMaster/RecoverPassword" variant="body2">
                                         Mot de passe oublié?
+                                    </Link>
+                                </Grid>
+
+                                <Grid item>
+                                    <Link href="/StockMaster/Register" variant="body2">
+                                        J'ai pas encore un compte
                                     </Link>
                                 </Grid>
                             </Grid>

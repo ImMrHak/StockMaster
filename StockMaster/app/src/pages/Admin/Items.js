@@ -236,6 +236,7 @@ const Items = () => {
                                             label="Libelle"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={editedItem.article.libelle || ''}
                                             onChange={(e) => setEditedItem({ ...editedItem, article: { ...editedItem.article, libelle: e.target.value } })}
                                         />
@@ -246,6 +247,7 @@ const Items = () => {
                                             variant="standard"
                                             fullWidth
                                             type="number"
+                                            required
                                             value={editedItem.article.quantite || ''}
                                             onChange={(e) => setEditedItem({ ...editedItem, article: { ...editedItem.article, quantite: e.target.value } })}
                                         />
@@ -256,6 +258,7 @@ const Items = () => {
                                             variant="standard"
                                             fullWidth
                                             type="number"
+                                            required
                                             value={editedItem.article.prixUnitaire || ''}
                                             onChange={(e) => setEditedItem({ ...editedItem, article: { ...editedItem.article, prixUnitaire: e.target.value } })}
                                         />
@@ -266,6 +269,7 @@ const Items = () => {
                                             variant="standard"
                                             fullWidth
                                             select
+                                            required
                                             value={editedItem.fournisseur.nom || ''}
                                             onChange={(e) => {
                                                 const selectedFournisseur = fournisseurs.find(f => f.nom === e.target.value);
@@ -305,6 +309,7 @@ const Items = () => {
                                             label="Libelle"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newItem.article.libelle}
                                             onChange={(e) => setNewItem({ ...newItem, article: { ...newItem.article, libelle: e.target.value } })}
                                         />
@@ -314,6 +319,7 @@ const Items = () => {
                                             label="Quantite"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             type="number"
                                             value={newItem.article.quantite}
                                             onChange={(e) => setNewItem({ ...newItem, article: { ...newItem.article, quantite: e.target.value } })}
@@ -324,6 +330,7 @@ const Items = () => {
                                             label="Prix Unitaire"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             type="number"
                                             value={newItem.article.prixUnitaire}
                                             onChange={(e) => setNewItem({ ...newItem, article: { ...newItem.article, prixUnitaire: e.target.value } })}
@@ -334,6 +341,7 @@ const Items = () => {
                                             label="Fournisseur"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             select
                                             value={newItem.fournisseur.nom || ''}
                                             onChange={(e) => {

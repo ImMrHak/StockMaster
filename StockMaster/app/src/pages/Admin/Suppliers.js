@@ -205,6 +205,7 @@ const Suppliers = () => {
                                             label="Nom"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={editedSupplier.nom || ''}
                                             onChange={(e) => setEditedSupplier({ ...editedSupplier, nom: e.target.value })}
                                         />
@@ -214,6 +215,7 @@ const Suppliers = () => {
                                             label="Adresse e-mail"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={editedSupplier.email || ''}
                                             onChange={(e) => setEditedSupplier({ ...editedSupplier, email: e.target.value })}
                                         />
@@ -223,6 +225,7 @@ const Suppliers = () => {
                                             label="Numero de telephone"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={editedSupplier.numeroTelephone || ''}
                                             onChange={(e) => setEditedSupplier({ ...editedSupplier, numeroTelephone: e.target.value })}
                                         />
@@ -247,6 +250,7 @@ const Suppliers = () => {
                                             label="Nom"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newSupplier.nom}
                                             onChange={(e) => setNewSupplier({ ...newSupplier, nom: e.target.value })}
                                         />
@@ -256,6 +260,7 @@ const Suppliers = () => {
                                             label="Adresse e-mail"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newSupplier.email}
                                             onChange={(e) => setNewSupplier({ ...newSupplier, email: e.target.value })}
                                         />
@@ -265,6 +270,7 @@ const Suppliers = () => {
                                             label="Numero de telephone"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newSupplier.numeroTelephone}
                                             onChange={(e) => setNewSupplier({ ...newSupplier, numeroTelephone: e.target.value })}
                                         />

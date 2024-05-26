@@ -84,7 +84,7 @@ const Users = () => {
     const handleUserCommandClick = (user) => {
         try {
             console.log(user);
-            window.location.href = `http://localhost:3000/StockMaster/Orders/${user.idUtilisateur}`
+            window.location.href = `http://localhost:3000/StockMaster/admin/Orders/${user.idUtilisateur}`
         }
         catch (error) {
             //console.error('Error:', error.message);
@@ -253,6 +253,7 @@ const Users = () => {
                                         <TextField
                                             label="Prenom"
                                             variant="standard"
+                                            required
                                             fullWidth
                                             value={editedUser.prenom || ''}
                                             onChange={(e) => setEditedUser({ ...editedUser, prenom: e.target.value })}
@@ -262,6 +263,7 @@ const Users = () => {
                                         <TextField
                                             label="Nom"
                                             variant="standard"
+                                            required
                                             fullWidth
                                             value={editedUser.nom || ''}
                                             onChange={(e) => setEditedUser({ ...editedUser, nom: e.target.value })}
@@ -271,6 +273,7 @@ const Users = () => {
                                         <TextField
                                             label="Adresse"
                                             variant="standard"
+                                            required
                                             fullWidth
                                             value={editedUser.adresse || ''}
                                             onChange={(e) => setEditedUser({ ...editedUser, adresse: e.target.value })}
@@ -280,6 +283,7 @@ const Users = () => {
                                         <TextField
                                             label="Adresse e-mail"
                                             variant="standard"
+                                            required
                                             fullWidth
                                             value={editedUser.email || ''}
                                             onChange={(e) => setEditedUser({ ...editedUser, email: e.target.value })}
@@ -290,6 +294,7 @@ const Users = () => {
                                             label="Mot de passe"
                                             variant="standard"
                                             type="password"
+                                            required
                                             fullWidth
                                             value={editedUser.motpasse || ''}
                                             onChange={(e) => setEditedUser({ ...editedUser, motpasse: e.target.value })}
@@ -299,6 +304,7 @@ const Users = () => {
                                         <TextField
                                             label="Age"
                                             variant="standard"
+                                            required
                                             fullWidth
                                             type="number"
                                             value={editedUser.age || ''}
@@ -310,6 +316,7 @@ const Users = () => {
                                             label="Role"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             select
                                             value={editedUser.role || ''}
                                             onChange={(e) => setEditedUser({ ...editedUser, role: e.target.value })}
@@ -341,6 +348,7 @@ const Users = () => {
                                             label="Prenom"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newUser.prenom}
                                             onChange={(e) => setNewUser({ ...newUser, prenom: e.target.value })}
                                         />
@@ -350,6 +358,7 @@ const Users = () => {
                                             label="Nom"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newUser.nom}
                                             onChange={(e) => setNewUser({ ...newUser, nom: e.target.value })}
                                         />
@@ -359,6 +368,7 @@ const Users = () => {
                                             label="Adresse"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newUser.adresse}
                                             onChange={(e) => setNewUser({ ...newUser, adresse: e.target.value })}
                                         />
@@ -368,6 +378,7 @@ const Users = () => {
                                             label="Adresse e-mail"
                                             variant="standard"
                                             fullWidth
+                                            required
                                             value={newUser.email}
                                             onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
                                         />
@@ -378,6 +389,7 @@ const Users = () => {
                                             variant="standard"
                                             type="password"
                                             fullWidth
+                                            required
                                             value={newUser.motpasse}
                                             onChange={(e) => setNewUser({ ...newUser, motpasse: e.target.value })}
                                         />
@@ -388,6 +400,7 @@ const Users = () => {
                                             variant="standard"
                                             fullWidth
                                             type="number"
+                                            required
                                             value={newUser.age}
                                             onChange={(e) => setNewUser({ ...newUser, age: e.target.value })}
                                         />
@@ -398,6 +411,7 @@ const Users = () => {
                                             variant="standard"
                                             fullWidth
                                             select
+                                            required
                                             value={newUser.role}
                                             onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
                                         >

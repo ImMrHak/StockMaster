@@ -16,15 +16,11 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 
 const pages = [
-    { label: 'Acceuil', route: '/StockMaster/admin/Dashboard' },
-    { label: 'Utilisateurs', route: '/StockMaster/admin/Users' },
-    { label: 'Fournisseurs', route: '/StockMaster/admin/Suppliers' },
-    { label: 'Aricles', route: '/StockMaster/admin/Items' },
-    { label: 'Commandes', route: '/StockMaster/admin/Orders' },
+    { label: 'Acceuil', route: '/StockMaster/user/Dashboard' },
 ];
 
 const settings = [
-    { label: 'Profil', route: '/StockMaster/admin/Account/Profil' },
+    { label: 'Profil', route: '/StockMaster/user/Account/Profil' },
     { label: 'Deconnexion', action: 'logout' },
 ];
 

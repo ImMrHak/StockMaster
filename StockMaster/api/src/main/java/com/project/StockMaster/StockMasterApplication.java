@@ -34,6 +34,8 @@ public class StockMasterApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ac = SpringApplication.run(StockMasterApplication.class, args);
+
+		
 		
 		GA = ac.getBean(GestionArticle.class);
 		GAF = ac.getBean(GestionArticleFournisseur.class);
@@ -42,20 +44,24 @@ public class StockMasterApplication {
 		GF = ac.getBean(GestionFournisseur.class);
 		GR = ac.getBean(GestionRole.class);
 		GU = ac.getBean(GestionUtilisateur.class);
+
+		
 		
 		GR.ajouterRole(new Role(1, "USER", null));
         GR.ajouterRole(new Role(2, "ADMIN", null));
+
+        
         
         GU.ajouterCustomUtilisateur(new Utilisateur(1, "Hakkou", "Mohamed", "Sala Al Jadida", "gtasanandreas123P", "hakkoumohamed23@gmail.com", 23, null, GR.chercherRole(Utils.ROLE_ADMIN)));
         GU.ajouterCustomUtilisateur(new Utilisateur(2, "Belouchi", "Yassine", "Sale", "yassinebelouchi", "belouchi2001@gmail.com", 23, null, GR.chercherRole(Utils.ROLE_ADMIN)));
         GU.ajouterCustomUtilisateur(new Utilisateur(3, "Laabdi", "Omar", "Rabat", "omarlaabdi123P", "omarlaabdi2001@gmail.com", 24, null, GR.chercherRole(Utils.ROLE_USER)));
         GU.ajouterCustomUtilisateur(new Utilisateur(4, "El Mansouri", "Fatima", "Casablanca", "fatimaelmansouri", "fatimaelmansouri@gmail.com", 25, null, GR.chercherRole(Utils.ROLE_USER)));
         GU.ajouterCustomUtilisateur(new Utilisateur(5, "Bouhadi", "Ahmed", "Marrakech", "ahmedbouhadi123P", "ahmedbouhadi@gmail.com", 22, null, GR.chercherRole(Utils.ROLE_USER)));
-        GU.ajouterCustomUtilisateur(new Utilisateur(6, "Zeroual", "Nadia", "Fes", "nadiazeroual123P", "nadiazeroual@gmail.com", 27, null, GR.chercherRole(Utils.ROLE_ADMIN)));
+        GU.ajouterCustomUtilisateur(new Utilisateur(6, "Zeroual", "Nadia", "Fes", "nadiazeroual123P", "nadiazeroual@gmail.com", 27, null, GR.chercherRole(Utils.ROLE_USER)));
         GU.ajouterCustomUtilisateur(new Utilisateur(7, "El Khammari", "Sara", "Tangier", "saraelkhammari123P", "saraelkhammari@gmail.com", 26, null, GR.chercherRole(Utils.ROLE_USER)));
-        GU.ajouterCustomUtilisateur(new Utilisateur(8, "Benkhadda", "Youssef", "Agadir", "youssefbenkhadda123P", "youssefbenkhadda@gmail.com", 29, null, GR.chercherRole(Utils.ROLE_ADMIN)));
+        GU.ajouterCustomUtilisateur(new Utilisateur(8, "Benkhadda", "Youssef", "Agadir", "youssefbenkhadda123P", "youssefbenkhadda@gmail.com", 29, null, GR.chercherRole(Utils.ROLE_USER)));
         GU.ajouterCustomUtilisateur(new Utilisateur(9, "Hamdi", "Hiba", "Oujda", "hibahamdi123P", "hibahamdi@gmail.com", 28, null, GR.chercherRole(Utils.ROLE_USER)));
-        GU.ajouterCustomUtilisateur(new Utilisateur(10, "El Guerrouj", "Rachid", "Kenitra", "rachidelguerrouj123P", "rachidelguerrouj@gmail.com", 30, null, GR.chercherRole(Utils.ROLE_ADMIN)));
+        GU.ajouterCustomUtilisateur(new Utilisateur(10, "El Guerrouj", "Rachid", "Kenitra", "rachidelguerrouj123P", "rachidelguerrouj@gmail.com", 30, null, GR.chercherRole(Utils.ROLE_USER)));
 
         
         
